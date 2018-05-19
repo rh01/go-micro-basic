@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+
 	// create a new service
 	service := micro.NewService()
 
@@ -16,6 +17,7 @@ func main() {
 	service.Init()
 
 	// Use the generated client stub
+	// name 必须要和服务端注册的一样
 	cl := hello.NewGreeterService("greeter", service.Client())
 
 	// Make request
