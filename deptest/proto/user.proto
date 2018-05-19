@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package pb;
+
+service UserService {
+    // 增
+    rpc InsertUser (InsertUserReq) returns (InsertUserResp){};
+    // 刪
+    rpc DeleteUser (DeleteUserReq) returns (DeleteUserResp){};
+    // 查
+    rpc SelectUser (SelectUserReq) returns (SelectUserResp){};
+    // 改
+    rpc ModifyUser (ModifyUserReq) returns (ModifyUserResp){};
+}
+
+message User {
+    int32 id = 1;
+    string name = 2;
+    string Address = 3;
+    string Phone = 4;
+}
+
+message ModifyUserReq {
+    int32 id = 1;
+    string name = 2;
+    string Address = 3;
+    string Phone = 4;
+}
+
+message ModifyUserResp {
+}
+
+message SelectUserReq {
+    int32 id = 1;
+}
+
+message SelectUserResp {
+    User users = 1;
+}
+
+message  InsertUserReq {
+    int32 id = 1;
+    string name = 2;
+    string Address = 3;
+    string Phone = 4;
+}
+
+message InsertUserResp {
+    int32 id = 1;
+    string name = 2;
+    string Address = 3;
+    string Phone = 4;
+}
+
+message DeleteUserReq {
+    int32 id = 1;
+}
+
+
+message DeleteUserResp {
+}
+
+
+
